@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
-
+    #warning("Изучи врапперы и разницу между ними.")
     @ObservedObject var viewModel = CardListViewModel()
 
 
@@ -27,6 +27,7 @@ struct MainView: View {
                     .background(Color.clear)
                 }
                 .background(Color.clear)
+            #warning("в функции .background(Color.clear) можно опустить структуру Color")
         }
         .background(Color.clear)
     }

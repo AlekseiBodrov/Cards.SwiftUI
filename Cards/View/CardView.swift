@@ -15,6 +15,7 @@ struct CardView: View {
 
 
     var body: some View {
+        #warning("Можно обойтись без GeometryReader и избавиться от большинства padding")
         GeometryReader { (geometry) in
             VStack {
                     //                Spacer()
@@ -64,6 +65,7 @@ struct CardView: View {
                     }
                     Divider()
                     HStack {
+                        #warning("Много повторяющихся элементов. Image можно вынести в отдельную сущность и переиспользовать со всем настройками")
                         Image("eye_white")
                             .resizable()
                             .colorMultiply(.blue)
@@ -91,13 +93,14 @@ struct CardView: View {
 
                     }
                     .padding(.leading, .spacing1)
+#warning("Можно использовать .padding(.all, .spacing1)")
                 }
                 .padding(.leading, .spacing1)
                 .padding(.trailing, .spacing1)
                 .padding(.top, .spacing1)
                 .padding(.bottom, .spacing1)
+#warning("Можно использовать .padding([.leading, .trailing], .spacing1)")
             }
-
             .background(Color.yellow)
             .cornerRadius(36)
             .padding(.leading, .spacing1)
